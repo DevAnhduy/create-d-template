@@ -1,0 +1,41 @@
+{
+  "name": "create-d-template",
+  "version": "1.0.3",
+  "main": "dist/index.js",
+  "repository": "https://github.com/DevAnhduy/create-d-template",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc && shx rm -rf dist/templates && shx cp -r templates dist",
+    "prettier": "prettier 'src/**/*.ts'",
+    "prettier:fix": "prettier --write 'src/**/*.ts'",
+    "lint": "eslint --ext .ts src/",
+    "lint:fix": "eslint --fix --ext .ts src/",
+	"publish": "npm publish --access public",
+    "update": "npm update"
+  },
+  "bin": {
+    "d-template": "./dist/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "ejs": "^3.1.7",
+    "inquirer": "^8.2.4",
+    "shelljs": "^0.8.5",
+    "yargs": "^17.4.1"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.0",
+    "@types/inquirer": "^8.2.1",
+    "@types/node": "^17.0.31",
+    "@types/shelljs": "^0.8.11",
+    "@types/yargs": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.15.0",
+    "prettier": "^2.6.2",
+    "shx": "^0.3.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}

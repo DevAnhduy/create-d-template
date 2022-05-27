@@ -1,0 +1,56 @@
+@import './variable';
+
+:root {
+	--loading-duration: 1.5s;
+	--loading-container-size: 250px;
+	--loading-box-size: 33px;
+	--loading-box-border-radius: 15%;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;
+}
+
+html {
+	font-size: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: unset;
+}
+
+body {
+	font-family: $font-family;
+	background-color: $body-bg;
+}
+
+button, input {
+	outline: 0;
+}
+
+input, textarea, select {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+ul {
+	list-style-type: none;
+}
+
+textarea:focus,
+textarea:active,
+input:focus,
+input:active,
+select:focus,
+select:active {
+	outline: none;
+	box-shadow: none;
+}

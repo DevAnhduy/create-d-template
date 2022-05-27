@@ -1,0 +1,32 @@
+/*
+    1. COLOR
+    2. FONT-STYLE
+    3. LAYOUT
+	4. BREAKPOINT
+*/
+
+// 1. COLOR
+$color-primary-1: #48e7a0;
+$color-primary-1-hover: #1890ff;
+$color-primary-2: #4f71ec;
+$color-input: #e5e7eb;
+$color-white: #fff;
+$color-gray: #b7c0cd;
+$color-link: #666666;
+$color-delete: #ff4d4f;
+$color-success: #00a591;
+$color-hide: #00a591;
+$color-pin: #fbbf24;
+
+// 2. FONT STYLE
+$font-family-primary: 'Quicksand', sans-serif;
+$font-size-text: 14px;
+
+// 3. LAYOUT
+
+// 4. BREAKPOINT
+$sm: 'screen and (min-width: 640px)';
+$md: 'screen and (min-width: 768px)';
+$lg: 'screen and (min-width: 1024px)';
+$xl: 'screen and (min-width: 1280px)';
+$xl2: 'screen and (min-width: 1536px)';

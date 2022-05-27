@@ -1,0 +1,25 @@
+@import './variable';
+
+@mixin mq($alias) {
+	@if $alias == 'sm' {
+		@media #{$sm} {
+			@content;
+		}
+	} @else if $alias == 'md' {
+		@media #{$md} {
+			@content;
+		}
+	} @else if $alias == 'lg' {
+		@media #{$lg} {
+			@content;
+		}
+	} @else if $alias == 'xl' {
+		@media #{$xl} {
+			@content;
+		}
+	} @else if $alias == 'xl2' {
+		@media #{$xl2} {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+#modules
+node_modules/
+
+#package lock
+yarn.lock
+package-lock.json
+
+#package error log
+yarn-error.log
+package-error.log
+
+dist

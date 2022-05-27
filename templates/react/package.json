@@ -1,0 +1,42 @@
+{
+  "name": "d-react-template",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "6.4.0",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
+    "@testing-library/user-event": "13.5.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "2.1.4"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
+    "prettier": "prettier --check src/**/*.js",
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.17.0",
+    "autoprefixer": "10.4.7",
+    "babel-eslint": "10.1.0",
+    "eslint": "8.15.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.5.0",
+    "postcss": "8.4.13",
+    "prettier": "2.6.2",
+    "sass": "^1.51.0",
+    "tailwindcss": "3.0.24"
+  }
+}
