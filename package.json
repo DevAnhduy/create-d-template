@@ -10,7 +10,7 @@
     "prettier:fix": "prettier --write 'src/**/*.ts'",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --fix --ext .ts src/",
-	"publish": "npm publish --access public",
+    "publish": "npm publish --access public",
     "update": "npm update"
   },
   "bin": {
