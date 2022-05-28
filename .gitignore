@@ -10,3 +10,5 @@ yarn-error.log
 package-error.log
 
 dist
+
+templates/react-vite/package-lock.json
