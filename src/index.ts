@@ -5,7 +5,6 @@ import * as path from 'path';
 import * as yargs from 'yargs';
 import { CliOptions } from './interfaces/cli';
 import { createDirectoryContents, createProject } from './utils/process';
-import { postProcess } from './utils/post_process';
 import { showMessage } from './utils/message';
 import { getTemplateConfig } from './utils/function';
 import { QUESTIONS } from './utils/question';
@@ -40,10 +39,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 	}
 
 	createDirectoryContents(templatePath, projectName, templateConfig);
-
-	if (!postProcess(options)) {
-		return;
-	}
 
 	showMessage(options);
 });
