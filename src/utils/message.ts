@@ -7,6 +7,11 @@ export const showMessage = (options: CliOptions) => {
 	console.log(
 		chalk.green(`Vào thư mục dự án bằng lệnh: cd ${options.projectName}`),
 	);
+	console.log(
+		chalk.green(
+			'Cài đặt thư viện cần thiết: npm install hoặc yarn install',
+		),
+	);
 
 	const message = options.config.postMessage;
 
