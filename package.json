@@ -1,6 +1,6 @@
 {
   "name": "create-d-template",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/index.js",
   "repository": "https://github.com/DevAnhduy/create-d-template",
   "publishConfig": {
@@ -40,5 +40,8 @@
     "shx": "^0.3.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
-  }
+  },
+  "files": [
+	".gitignore"
+  ]
 }
