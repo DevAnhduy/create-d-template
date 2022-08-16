@@ -1,6 +1,6 @@
 {
   "name": "create-d-template",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "dist/index.js",
   "repository": "https://github.com/DevAnhduy/create-d-template",
   "publishConfig": {
