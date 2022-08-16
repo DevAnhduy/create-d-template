@@ -1,10 +1,10 @@
 {
   "name": "create-d-template",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "dist/index.js",
   "repository": "https://github.com/DevAnhduy/create-d-template",
   "publishConfig": {
-	"@devanhduy:registry": "https://npm.pkg.github.com"
+    "@devanhduy:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "start": "ts-node src/index.ts",
