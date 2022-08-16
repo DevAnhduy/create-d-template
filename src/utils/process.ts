@@ -4,7 +4,11 @@ import * as template from './templates';
 import chalk from 'chalk';
 
 import { TemplateConfig } from '../interfaces/template';
-import { SKIP_FILES } from '../configs/_constant';
+import {
+	GITIGNORE_NAME,
+	GITIGNORE_TEMP_NAME,
+	SKIP_FILES,
+} from '../configs/_constant';
 
 const CURR_DIR = process.cwd();
 
@@ -42,7 +46,12 @@ export const createDirectoryContents = (
 
 			contents = template.render(contents, { projectName });
 
+			if (file === GITIGNORE_TEMP_NAME) {
+				file = GITIGNORE_NAME;
+			}
+
 			const writePath = path.join(CURR_DIR, projectName, file);
+
 			fs.writeFileSync(writePath, contents, 'utf8');
 		} else if (stats.isDirectory()) {
 			fs.mkdirSync(path.join(CURR_DIR, projectName, file));
