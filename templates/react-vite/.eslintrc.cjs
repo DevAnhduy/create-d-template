@@ -1,24 +1,21 @@
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
 
+const restrictedGlobals = require('confusing-browser-globals');
+
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
   env: {
     browser: true,
     commonjs: true,
     es6: true,
-    jest: true,
     node: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:prettier/recommended'],
+  plugins: ['react', 'import', 'jsx-a11y', 'react-hooks', 'simple-import-sort'],
   parserOptions: {
-    ecmaVersion: 2018,
-    requireConfigFile: false,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -29,9 +26,9 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react', 'import', 'flowtype', 'jsx-a11y', 'react-hooks'],
   rules: {
-    // http://eslint.org/docs/rules/
+    'react/jsx-uses-vars': 'warn',
+    'react/jsx-uses-react': 'warn',
     'array-callback-return': 'warn',
     'default-case': ['warn', { commentPattern: '^no default$' }],
     'dot-location': ['warn', 'property'],
@@ -98,6 +95,7 @@ module.exports = {
     'no-this-before-super': 'warn',
     'no-throw-literal': 'warn',
     'no-undef': 'error',
+    'no-restricted-globals': ['error'].concat(restrictedGlobals),
     'no-unreachable': 'warn',
     'no-unused-expressions': [
       'error',
@@ -218,9 +216,26 @@ module.exports = {
     // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
 
-    // https://github.com/gajus/eslint-plugin-flowtype
-    'flowtype/define-flow-type': 'warn',
-    'flowtype/require-valid-file-annotation': 'warn',
-    'flowtype/use-flow-type': 'warn',
+    // simple-import-sort
+    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Packages `react` related packages come first.
+          ['^react', '^@?\\w'],
+          // Internal packages.
+          ['^(@|components)(/.*|$)'],
+          // Side effect imports.
+          ['^\\u0000'],
+          // Parent imports. Put `..` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Style imports.
+          ['^.+\\.?(css)$'],
+        ],
+      },
+    ],
   },
 };
