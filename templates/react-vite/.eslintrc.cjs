@@ -13,7 +13,7 @@ module.exports = {
     node: true,
   },
   extends: ['plugin:prettier/recommended'],
-  plugins: ['react', 'import', 'jsx-a11y', 'react-hooks', 'simple-import-sort'],
+  plugins: ['react', 'import', 'jsx-a11y', 'react-hooks'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -215,27 +215,5 @@ module.exports = {
 
     // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
-
-    // simple-import-sort
-    'simple-import-sort/exports': 'error',
-    'simple-import-sort/imports': [
-      'error',
-      {
-        groups: [
-          // Packages `react` related packages come first.
-          ['^react', '^@?\\w'],
-          // Internal packages.
-          ['^(@|components)(/.*|$)'],
-          // Side effect imports.
-          ['^\\u0000'],
-          // Parent imports. Put `..` last.
-          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-          // Other relative imports. Put same-folder imports and `.` last.
-          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-          // Style imports.
-          ['^.+\\.?(css)$'],
-        ],
-      },
-    ],
   },
 };
